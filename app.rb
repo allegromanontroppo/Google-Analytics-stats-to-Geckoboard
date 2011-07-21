@@ -30,9 +30,9 @@ get '/ga/:site_id/:metric/day' do
     yesterday            = metrics_for_dates profile, params[:metric].to_sym, Date.yesterday
     a_year_ago_yesterday = metrics_for_dates profile, params[:metric].to_sym, Date.a_year_ago_yesterday  
     
-    item = []
-    item << { :text => 'Yesterday', :value => yesterday}
-    item << { :text => 'Last Year', :value => a_year_ago_yesterday}    
+    items = []
+    items << { :text => 'Yesterday', :value => yesterday}
+    items << { :text => 'Last Year', :value => a_year_ago_yesterday}    
     
     { :item => items }.to_json
   
