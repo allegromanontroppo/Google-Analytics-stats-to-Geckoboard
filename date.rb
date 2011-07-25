@@ -7,16 +7,45 @@ class Date
     today - 1
   end
 
-  def self.a_week_ago_yesterday
-    yesterday - 7
+  def self.last_sunday
+
+    d = yesterday
+    until d.wday == 0
+      d -= 1
+    end
+
+    d
+
   end
 
-  def self.a_year_ago_yesterday
-    yesterday << 12
+  def self.a_week_last_monday
+
+    last_sunday - 6
+
   end
 
-  def self.a_year_ago_a_week_ago_yesterday
-    a_year_ago_yesterday - 7
+  def self.start_of_month
+
+    Date.civil(today.year, today.month, 1)
+
+  end
+
+  def self.start_of_year
+
+    Date.civil(today.year, 1, 1)
+
+  end
+    
+  def self.method_missing(method_id, *arguments)    
+    
+    match = /^([_a-zA-Z]+)_a_year_ago$/.match(method_id.to_s)
+    puts method_id
+    puts match
+    
+    raise NoMethodError unless match
+    
+    self.send( match.captures[0].to_sym ) << 12
+    
   end
     
 end
