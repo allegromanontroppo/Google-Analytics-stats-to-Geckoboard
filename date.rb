@@ -39,8 +39,6 @@ class Date
   def self.method_missing(method_id, *arguments)    
     
     match = /^([_a-zA-Z]+)_a_year_ago$/.match(method_id.to_s)
-    puts method_id
-    puts match
     
     raise NoMethodError unless match
     
