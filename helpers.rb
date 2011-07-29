@@ -43,26 +43,26 @@ helpers do
       
     case metric.to_sym
       
-    when :visitors
-          return pm.first.visitors
+      when :visitors
+            return pm.first.visitors
       
-    when :percent_new_visits
-          return pm.first.percent_new_visits
+      when :percent_new_visits
+            return pm.first.percent_new_visits
 
-    when :avg_time_on_site
-          return pm.first.avg_time_on_site
+      when :avg_time_on_site
+            return pm.first.avg_time_on_site
 
-    when :pageviews_per_visit
-          return pm.first.pageviews_per_visit
+      when :pageviews_per_visit
+            return pm.first.pageviews_per_visit
 
-    when :unique_pageviews
-          return pm.first.unique_pageviews
+      when :unique_pageviews
+            return pm.first.unique_pageviews
 
-    when :visit_bounce_rate
-          return pm.first.visit_bounce_rate
+      when :visit_bounce_rate
+            return pm.first.visit_bounce_rate
 
-    else        
-          raise "Unknown metric"
+      else        
+            raise "Unknown metric"
       
     end if pm.total_results > 0
 
