@@ -31,7 +31,7 @@ get '/ga/:site_id/:metric/:period' do
       
     items = []
     items << { :text => date_bounds[:this_year][:label], :value => metrics_for_dates(profile, params[:metric], date_bounds[:this_year][:dates].first, date_bounds[:this_year][:dates].last) }
-    items << { :text => date_bounds[:last_year][:label], :value => metrics_for_dates(profile, params[:metric], date_bounds[:last_year][:dates].first, date_bounds[:this_year][:dates].last) }  
+    items << { :text => date_bounds[:last_year][:label], :value => metrics_for_dates(profile, params[:metric], date_bounds[:last_year][:dates].first, date_bounds[:last_year][:dates].last) }  
     
     { :item => items }.to_json
   
