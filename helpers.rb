@@ -39,36 +39,32 @@ helpers do
     # http://code.google.com/apis/analytics/docs/gdata/gdataReferenceD  imensionsMetrics.html
     # ga:date	The date of the visit. An integer in the form YYYYMMDD  
 
-    pm = site_profile.metrics :start_date => start_date, :end_date => end_date
-
-    if pm.total_results > 0
+    pm = site_profile.metrics :start_date => start_date, :end_date => end_date    
       
-      case metric.to_sym
-        
-      when :visitors
-            return pm.first.visitors
-        
-      when :percent_new_visits
-            return pm.first.percent_new_visits
-
-      when :avg_time_on_site
-            return pm.first.avg_time_on_site
-
-      when :pageviews_per_visit
-            return pm.first.pageviews_per_visit
-
-      when :unique_pageviews
-            return pm.first.unique_pageviews
-
-      when :visit_bounce_rate
-            return pm.first.visit_bounce_rate
-
-      else        
-            raise "Unknown metric"
-        
-      end
+    case metric.to_sym
       
-    end
+    when :visitors
+          return pm.first.visitors
+      
+    when :percent_new_visits
+          return pm.first.percent_new_visits
+
+    when :avg_time_on_site
+          return pm.first.avg_time_on_site
+
+    when :pageviews_per_visit
+          return pm.first.pageviews_per_visit
+
+    when :unique_pageviews
+          return pm.first.unique_pageviews
+
+    when :visit_bounce_rate
+          return pm.first.visit_bounce_rate
+
+    else        
+          raise "Unknown metric"
+      
+    end if pm.total_results > 0
 
   end
   
