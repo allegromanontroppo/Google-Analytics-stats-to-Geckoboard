@@ -74,24 +74,24 @@ helpers do
     
     case period.to_sym
       
-    when :yesterday
-          date_bounds[:this_year] = { :label => 'Yesterday', :dates => [ Date.yesterday ] }
-          date_bounds[:last_year] = { :label => 'Yesterday a year ago', :dates => [ Date.yesterday_a_year_ago ] }
+      when :yesterday
+            date_bounds[:this_year] = { :label => 'Yesterday', :dates => [ Date.yesterday ] }
+            date_bounds[:last_year] = { :label => 'Yesterday a year ago', :dates => [ Date.yesterday_a_year_ago ] }
       
-    when :last_week
-          date_bounds[:this_year] = { :label => 'Last week', :dates => [ Date.a_week_last_monday, Date.last_sunday ] }
-          date_bounds[:last_year] = { :label => 'Last week a year ago', :dates => [ Date.a_week_last_monday_a_year_ago, Date.last_sunday_a_year_ago ] }
+      when :last_week
+            date_bounds[:this_year] = { :label => 'Last week', :dates => [ Date.a_week_last_monday, Date.last_sunday ] }
+            date_bounds[:last_year] = { :label => 'Last week a year ago', :dates => [ Date.a_week_last_monday_a_year_ago, Date.last_sunday_a_year_ago ] }
       
-    when :this_month
-          date_bounds[:this_year] = { :label => 'Last month', :dates => [ Date.start_of_month, Date.yesterday ] }
-          date_bounds[:last_year] = { :label => 'Last month a year ago', :dates => [ Date.start_of_month_a_year_ago, Date.yesterday_a_year_ago ] }
+      when :this_month
+            date_bounds[:this_year] = { :label => 'Last month', :dates => [ Date.start_of_month, Date.yesterday ] }
+            date_bounds[:last_year] = { :label => 'Last month a year ago', :dates => [ Date.start_of_month_a_year_ago, Date.yesterday_a_year_ago ] }
       
-    when :this_year
-         date_bounds[:this_year] = { :label => 'This year', :dates => [ Date.start_of_year, Date.yesterday ] }
-         date_bounds[:last_year] = { :label => 'Last year', :dates => [ Date.start_of_year_a_year_ago, Date.yesterday_a_year_ago ] }
+      when :this_year
+           date_bounds[:this_year] = { :label => 'This year', :dates => [ Date.start_of_year, Date.yesterday ] }
+           date_bounds[:last_year] = { :label => 'Last year', :dates => [ Date.start_of_year_a_year_ago, Date.yesterday_a_year_ago ] }
       
-    else 
-        raise "Unknown period"
+      else 
+          raise "Unknown period"
         
     end    
     
